@@ -51,6 +51,9 @@ class LogDataParser():
 		if timesecs is None:
 			print("Got no timesecs, but %d counts, ignoring." % (counts), file = sys.stderr)
 			return
+		if timesecs == 0:
+			print("Got timesecs of 0, ignoring.", file = sys.stderr)
+			return
 		if self._curdate is None:
 			print("Got timesecs %s, counts %d without an initial timevalue, ignoring." % (str(timesecs), counts), file = sys.stderr)
 			return
